@@ -1,0 +1,12 @@
+#!/bin/bash
+
+###########################################################################################
+# Opens Intellij IDEA found at given path (PATH_TO_SEARCH_INTELLIJ)
+# Motivation: Default CLI launcher doesn't open Intellij in background and has hardcoded path
+# Example: ./idea
+###########################################################################################
+
+PATH_TO_SEARCH_INTELLIJ=~/dev/tools
+
+IDEA_LANUCHER_PATH=$(find $PATH_TO_SEARCH_INTELLIJ -name idea.sh | sort -r | head -n 1)
+eval $IDEA_LANUCHER_PATH >/dev/null 2>&1 &
